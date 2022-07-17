@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer = "YES", max;    //긴 막대의 길이를 max로 선언!
+                let sum = a + b + c;        //어떤 수가 max가 되고,
+                                            //어떤 수가 나머지 두변의 길이가 될지 모르기 때문에 넣어준 세수의 합
+                
+            //가장 길이가 긴 변을 찾는 조건문 if (a 와 b를 비교) 
+                if(a > b){                  
+                    max = a; 
+                }else{
+                    max = b; 
+                }
+            //첫 if문 끝------------------------------
+            //그 다음, c 와 비교하는 조건문 if (이전 두 수 중에서 큰수와 c를 비교 )
+                if(c > max){
+                    max = c;
+                }
+            //두번째 if문 끝---------------------------
+            //이제 가장 긴변의 길이와 나머지 두변의 합을 비교하는 조건문 if
+                if((sum - max) <= max){     //여기서 세 수 중에서 어느것이 가장 긴변이 될지, 
+                                            //그리고 두변의 합을 모르기때문에 
+                                            //앞에 sum이라는 변수를 선언해서 나머지 두 길이를 알수있게 한다. 
+                    answer = "NO";          //만약 두변의 길이의 합이 가장 긴변보다 작거나 같을 경우 
+                                            //answer 에 NO 를 넣는다. 
+                }
+            //세번째 if문 끝--------------------------   
+                return answer;              //answer 을 도출!!!
+                
+            }
+
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>
