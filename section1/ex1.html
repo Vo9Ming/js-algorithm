@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <h2>세 수 중 최솟값</h2>
+        <script>
+            var a = prompt("100이하의 수를 입력하세요");
+            var b = prompt("100이하의 수를 입력하세요");
+            var c = prompt("100이하의 수를 입력하세요");
+            
+            function solution(a, b, c){
+                let answer;
+                if(a > 100 || b > 100 || c >100){
+                    document.write("100초과!!! 100이하의 수를 입력해주세요");
+                    return(a , b, c);
+                }
+
+                if (a < b){
+                    answer = a;
+                }else{
+                    answer = b;
+                }
+                if(answer > c){
+                    document.write(a +","+ b +","+ c +" 세 수 중 최솟값은 " + c );
+                }else{
+                    document.write(a +","+ b +","+ c +" 세 수 중 최솟값은 " + answer );
+                }
+            }
+
+            console.log(solution(a, b, c));
+        </script>
+    </body>
+</html>
