@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            
+            function solution(a, b, c){
+                let answer = "YES";
+                
+                if(a + b > c && a + c > b && b + c > a){
+                    return answer;
+                }else{
+                    answer = "NO";
+                    return answer;
+                }
+
+                
+            }
+            console.log(solution(6, 7, 11));
+            console.log(solution(13, 3, 17));
+        </script>
+    </body>
+</html>
