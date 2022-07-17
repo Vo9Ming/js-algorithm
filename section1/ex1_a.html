@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){ // 넘겨받은 값으로 함수 시작! 
+                let answer;
+                
+                if(a < b) {             // 먼저 a , b 를 비교
+                    answer = a;         // 참이면 answer 에 a 를 넣는다.
+                }else{                  // 거짓이면 
+                    answer = b;         // answer 에 b 를 넣는다.
+                }                       // 첫 if 문 끝 -----------------------
+                if(c < answer){         // 이제 c 와 answer 를 비교, c가 answer보다 작으면
+                    answer = c;         // answer 에 c 를 넣는다.
+                }
+
+                return answer;          // 1. c 가 answer 보다 작으면 c가 담긴 answer를 return!
+            }                           // 2. c 가 answer 보다 크면 첫번째 if문에서 담겨있던 answer가 return!
+
+            console.log(solution(6, 5, 11));  //함수의 매개변수로 값을 넘겨준다.
+                                              //그리고 값을 보여준다.
+        </script>
+    </body>
+</html>
