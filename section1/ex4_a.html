@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                let answer = 0;                 // 변수 answer에 값을 누적할 것이기 때문에
+                                                //  answer 를 선언하고 0으로 초기화
+
+                for(let i = 1 ; i <= n; i++){   //'i'라는 변수를 하나 더 선언해서 반복문을 돌린다.
+                                                // 초기값 1로 설정, 조건식 i가 n이 될때까지, i를 하나씩 올린다.
+                
+                    answer = answer + i;        // answer + 1 의 값을 answer에 다시 넣는다. 
+                }
+                
+                return answer;
+            }
+
+            console.log(solution(6));
+            console.log(solution(10));
+        </script>
+    </body>
+</html>
