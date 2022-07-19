@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let oddArray = arr.filter( function (element) {
+                    return element % 2 !== 0 ;
+                
+                })
+                
+                console.log(oddArray);
+                
+                
+                let resultSum = 0 ;
+                let resultMin = Number.MAX_SAFE_INTEGER;
+                for(let i = 0; i < oddArray.length; i ++){
+                    resultSum += oddArray[i];
+                    if(oddArray[i] < resultMin){
+                        resultMin = oddArray[i];
+                    
+                    }
+                    
+                }
+                console.log(resultSum);
+                console.log(resultMin);
+                //return resultSum, resultMin;
+                ///////////////////////////////////////값은다 나오는데 마지막에 왜 값이 하나일까아아아아앙.
+                ///////////////////////////////////////저렇게 쓰면 안되는 것잉가.....
+                //////리턴을 여러개 하고싶을때는 배열을 써보라는데....
+
+                return [resultSum,resultMin];
+
+                //////으악....[ ]안에 들어가서 도출되네........... 
+
+            }
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
