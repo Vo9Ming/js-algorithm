@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력결과</title>
+</head>
+<body>
+    <script>
+        //forEach , map , filter , reduce
+
+            function reduce(predicate, value){
+                let result = value;
+                for(let i = 0; i < a.length; i ++){
+                    result = predicate(result, a[i]);     // predicate 가 콜백함수를 호출
+                                                          // 여기로 acc + v의 값이 들어와서 result에 넣는다.
+                }
+
+                return result;                          
+            }
+
+
+        a = [10, 11, 12, 13, 14, 15];
+        
+        
+        // reduce
+        let answer = a.reduce(function( acc , v ){       // 배열을 생성하는 것이 아니라 어떤 값을 생성하는 것 
+                                                         // return result( = return acc + v ;)의 값이 매개변수 acc로 다시 들어온다.
+            return acc + v ;                             // acc + v 의 값을 리턴 ==> predicate(result + a[i]); 부분으로 들어간다 
+                                                         // 결국 return acc + v ; 의 값이 acc 와 같아짐.  두번째 //와 같은 말 
+        }, 0 );                                          // reduce 의 두번째 인자는 초기값을 지정하는 것! 
+        console.log(answer);
+
+        
+
+        
+
+    </script>
+</body>
+</html>
