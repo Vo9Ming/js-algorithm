@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(day, arr){           // day 와 arr을 매개변수로 받는다.
+                let answer = 0;                    // 위반한 차량의 대수를 도출하는 것이므로 answer를 0으로 초기화
+                
+                for(let x of arr){                 // arr 배열을 하나하나 뽑아낸다
+                    if(x % 10 === day){            // 뽑아낸 arr 배열의 수( x )를 10으로 나누었을때 나머지가 day 이면
+                                                   // 일의자리 숫자를 찾을때 어떤 수를 10으로 나누면 무조건 일의자리가 나머지로 나옴. 
+                        answer++;                  // 위반한 차량의 대수의 카운트를 하나씩 올린다.
+                    }
+                }
+                return answer;                     // 위반한 차량의 대수를 도출해 낸다.
+            }
+            
+            arr=[25, 23, 11, 47, 53, 17, 33];
+            console.log(solution(3, arr));
+        </script>
+    </body>
+</html>
