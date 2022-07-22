@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer;
+                let sum = 100;
+
+                for(let i = 0; i < arr.length; i++){          // 하나하나 불러낼건데...
+                    sum -= arr[i];                            // 100에서 불러낼때마다 그값을 빼야지.
+                    if(sum === 0){                            // .... 근데 딱 0으로 안끝나질 경우 어쩌지..
+                                                              // 그러네.... 0 이 안될경우 다른 배열을 어떻게 끌어내지
+                                                              
+                        
+                    }                          
+                }
+                //return answer;
+
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
