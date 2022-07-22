@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력결과</title>
+</head>
+<body>
+    <script>
+        // 9난쟁이 키의 총합을 구하고 
+        // 그 총합에서 두 수의 합을 뺀 값이 100 이면 된다. 
+        // 이중 for문을 돌려! 
+        function solution(arr){
+            let answer = arr;                               // arr 을 조작하면 answer도 조작되고, answer을 조작해도 arr이 조작됨 
+            let sum = arr.reduce(( a , b ) => a + b, 0);    // a 에 b의 값을 누적을 한다.  a 를 0 으로 초기화해라  
+            console.log(arr);
+            //console.log(sum);                             // 총 합은 140   
+            
+            for(let i = 0; i < 8; i++){                     // 0 ~ 7 까지만 돌면 되므로 i < 8 까지 
+                for(let j = i + 1; j < 9; j++){             // 1 ~ 8 까지만 돌면 되므로 j < 9 까지
+                    //console.log(arr[i], arr[j]);
+                    if((sum - (arr[i] + arr[j])) === 100){
+                        // i 를 먼저 지우게 되면 인덱스 값이 앞으로 당겨진다. 그래서 원래 지워야하는 것이 아닌 다른 것을 지우는 문제가 생김
+                            arr.splice(j , 1);              // arr 에서 j 번쩨것을 하나 제거해라
+                            arr.splice(i , 1);              // arr 에서 i 번째것을 하나 제거해라
+                        // 그래서 뒤의 것인 j 를 먼저 지우면 i 와는 상관없기 때문에 문제가 생기지 않음  
+                    }
+                }
+            }
+
+            return answer;
+        }
+        
+        let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+    </script>
+</body>
+</html>
