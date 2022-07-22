@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력결과</title>
+</head>
+<body>
+    <script>
+        //forEach , map , filter , reduce
+
+        //function filter(predicate, thisArg){
+        //    let list = [];                            빈 배열을 생성하고 
+        //    for(let i = 0; i < a.length; i++){        for문이 돌면서 원본 배열을 하나하나 탐색 
+        //          if(predicate( a[i] , i ){           predicate 가 콜백함수. 
+        //              list.push(a[i]);                콜백함수가 조건이 참일때의 요소들로 이루어진 새로운 배열을 생성
+        //          })                                  (원본배열의 수와 다를 수 있다.)
+        //    }
+        //    return list;                              생성된 배열을 리턴.
+        //}
+
+
+        a = [10, 11, 12, 13, 14, 15];
+        
+        
+        // filter
+        let answer = a.filter(function(v , i){       // 새로운 배열을 입력받아 answer에 넣어준다.
+            return v % 2 === 0;                      // 원본배열에서 조건이 참일때만의 요소만을 배열로 return한다. 10,12,14 만 리턴
+                                                     // map 하고의 차이는 원본배열의 수와 다르다는 점!!! 
+        },[ 1 , 2 ]);               
+        console.log(answer);
+
+        
+
+        
+
+    </script>
+</body>
+</html>
