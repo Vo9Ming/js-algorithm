@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력결과</title>
+</head>
+<body>
+    <script>
+        //forEach , map , filter , reduce
+
+        //function map(predicate, thisArg){
+        //    let list = [];                            빈 배열을 생성하고 
+        //    for(let i = 0; i < a.length; i++){        for문이 돌면서 원본 배열을 하나하나 탐색 
+        //        list.push(predicate( a[i], i ));      predicate 가 콜백함수. / 콜백함수가 리턴한 그 값을 원소로 하는 새로운 배열을 생성
+        //    }
+        //    return list;                              생성된 배열을 리턴.
+        //}
+
+
+        a = [10, 11, 12, 13, 14, 15];
+        
+        
+        // map
+        let answer = a.map(function(v , i){       // 새로운 배열을 입력받아 answer에 넣어준다.
+            //return v * v;                       // 배열이 return된다.
+            if( v % 2 === 0){                     
+                return v;                         // 조건에 부합하는 10, 12, 14만 도출될거 같지만  
+            }                                     // 무조건 원본배열의 길이만큼 탐색하고 
+                                                  // 새값을 push 하기때문에 원본배열의 길이와 같을 수 밖에 없다. 
+                                                  // 조건에 부합하는 값은 도출되고, 부합하지 않는건 undefined이 리턴된다.
+        },[ 1 , 2 ]);
+        console.log(answer);
+
+        
+
+        
+
+    </script>
+</body>
+</html>
