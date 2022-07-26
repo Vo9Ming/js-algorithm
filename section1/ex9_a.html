@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="";              // answer 에 문자열을 받는다.
+                for(let x of s){            // 반복문을 돌려서 문자열 문자 하나하나에 접근!
+                    if( x === 'A') {        // 문자가 'A'와 같으면 
+                        answer += '#';      // answer (즉, 빈문자열) 에 '#'을 더한다.
+                                            // 문자열을 더하는 것은 문자를 적는다는 느낌과 같다.
+                    }else {                 // 문자가 'A'와 다르면
+                        answer+=x;          // 원래 적혀져있던 문자 x를 answer에 더한다.
+                    }        
+                }   
+                return answer;              // answer값을 리턴 
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+
