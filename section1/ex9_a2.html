@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = s;                 
+                // 스트링은 값이 복사되는 것이지 배열처럼, 배열객체처럼 주소참조가 아니다.
+                answer = answer.replace(/A/g, "#");         
+                //replace함수를 이용해서, 정규식으로 /A/g  여기서 g는 전역으로, A 문자 전체 다! 라는 뜻!
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
