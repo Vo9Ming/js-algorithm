@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){               // str이 넘어간 것을 s 가 받는다. 
+                let answer = 0;                 // 카운팅이니까 answer는 0으로 !! 
+                for(let x of s){                // x 가 반복문을 돌때마다 s의 문자 하나하나가 됨.
+                    let num = x.charCodeAt();   // x 라는 문자의 아스키코드를 num에 넣는다.
+                        // .charCodeAt() => 아스키코드값을 불러내는 함수.
+                        // 대문자의 아스키코드 값 : 65 ~ 90  (A ~ Z)
+                        // 소문자의 아스키코드 값 : 97 ~ 122 (a ~ z)
+                    
+                    
+                    if(num >= 65 && num <= 90){ // 대문자 아스키코드 값의 범위이면
+                        answer++;               // answer를 증가시켜라! 
+                    }
+
+                        
+                }
+
+                return answer;
+            }
+                
+            
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
