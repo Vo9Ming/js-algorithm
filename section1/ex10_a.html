@@ -6,10 +6,12 @@
     <body>
         <script>
             function solution(s, t){
-                let answer = 0;
-                for(let x of s){
-                    if( x === t ){
-                        answer++;
+                let answer = 0;                     
+                //answer 에 특정 문자의 갯수를 세는 것이기 떄문에 0 으로 초기화 
+
+                for(let x of s){            // str 의 문자 하나하나에 접근! 
+                    if( x === t ){          // 문자 하나하나 담는 x 가 특정 문자 R과 같으면 
+                        answer++;           // answer 의 수를 증가 시킨다. 
                     }
                 }
                 return answer;
