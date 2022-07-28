@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){                   // str 이 s 로 넘어온다! 
+                let answer = "";                    // 문자열을 누적하기 때문에 answer 에 " "로 초기화
+                for(let x of s){                    // 반복문을 돌면서 s 의 문자 하나하나에 접근!
+                    if( x === x.toLowerCase()){     // x 에 담긴 문자와 x의 소문자화 시킨 것을 비교! (이게 참이라면)
+                        answer += x.toUpperCase();  // answer 에 x 를 대문자화해서 누적
+                    }else{                          // else -> 즉, x 에 담긴 문자가 대문자라면! 
+                        answer += x;                // x 그대로를 answer 에 누적한다! 
+                    }
+                }
+
+                return answer;
+
+            }
+
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
