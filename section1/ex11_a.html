@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){               // str이 넘어간 것을 s 가 받는다. 
+                let answer = 0;                    // 카운팅이니까 answer는 0으로 !! 
+                for(let x of s){                // x 가 반복문을 돌때마다 s의 문자 하나하나가 됨.
+                    if( x === x.toUpperCase()){ // x 와 대문자로 리턴받은 x 가 같다면 
+                        // 참고) x를 대문자로 리턴할 뿐이지 x 자체의 값을 바꾸진 않는다.  
+                        //      x 자체를 바꾸고 싶다면 x = x.toUpperCase()를 하면 된다.
+                     
+                        answer++;
+                    }
+                }
+                return answer;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
