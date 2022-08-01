@@ -10,10 +10,10 @@
     <script>
         function solution(str){
             let answer= " ";
-            let min = Number.MIN_SAFE_INTEGER;
+            let max = Number.MIN_SAFE_INTEGER;
             for(let x of str){
-                if(x.length > min){
-                    min = x.length;
+                if(x.length > max){
+                    max = x.length;
                     answer = x;
                 }
             }
