@@ -5,16 +5,16 @@
     </head>
     <body>
         <script>
-            function solution(s){  
-                let answer = " ";
-                for(let x of s){
-                    if(x === x.toUpperCase()){
-                        answer += x.toLowerCase();
-                    }else{
-                        answer += x.toUpperCase();
+            function solution(s){                   // StuDY 를 매개변수로 받는다.
+                let answer = " ";                   // 리턴할 answer가 문자열이므로 문자열로 초기화
+                for(let x of s){                    // 반복문을 돌려 문자 하나하나에 접근한다.
+                    if(x === x.toUpperCase()){      // 조건문, 만약 접근한 문자가 대문자라면
+                        answer += x.toLowerCase();  // answer에 접근한 문자의 소문자로 바꿔 answer에 누적
+                    }else{                          // 조건이 성립하지 않는다면, 즉 접근한 문자가 소문자라면 
+                        answer += x.toUpperCase();  // answer에 접근한 문자를 대문자로 바꿔 누적한다.
                     }
-                }
-                return answer;
+                }   
+                return answer;                      // answer를 리턴
             }
 
             console.log(solution("StuDY"));
