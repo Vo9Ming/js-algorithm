@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer = " ";
+                //console.log(s.indexOf('k'));                  // k 라는 문자를 처음 발견하는 인덱스 번호를 리턴 
+                //console.log(s.indexOf('k' , 1));              // 1번 인덱스 이후의 k 를 발견하는 인덱스 번호를 리턴
+                //console.log(s.indexOf('K'));                  // -1 이 리턴 ( 없는 문자의 인덱스번호를 리턴할때는 -1이 나옴)
+                for(let i = 0; i < s.length; i++){              // 이때는 인덱스로 탐색해야 한다. for of는 안됨
+                    //console.log(s[i], i, s.indexOf(s[i]));    // 문자, 인덱스 번호, 자신과 똑같은 문자를 처음 발견하는 인덱스 번호 
+                    if(s.indexOf(s[i]) === i){                  // 처음 자신의 문자가 나타나는 인덱스번호와 본래 자신의 위치의 인덱스 번호가 같다면 
+                        answer += s[i];                         // answer 에 그 문자를 누적한다.
+                    }   
+                }
+
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
