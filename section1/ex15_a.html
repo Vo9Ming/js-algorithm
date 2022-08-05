@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // substring 사용 ==> substring(시작, 끝) : 시작부터 끝 전까지 잘라라 
+            
+            function solution(s){  
+                let answer;
+                let mid = Math.floor(s.length / 2);         // 길이를 먼저 구한다. (몫을 구한다)
+                if(s.length % 2 === 1){                     // s의 길이를 2로 나누었을때의 나머지가 1일 경우 (즉, 홀수일 경우)
+                    answer = s.substring(mid, mid + 1);     // mid 부터 mid + 1 전까지 잘라라
+                }else{                                      // s의 길이가 짝수일 경우
+                    answer = s.substring(mid - 1, mid + 1); // mid - 1  부터 mid + 1 전까지 잘라라 
+                }
+
+                return answer;
+            }
+            console.log(solution("study"));
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>
