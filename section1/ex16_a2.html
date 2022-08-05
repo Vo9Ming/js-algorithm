@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 특정 문자 'k'의 갯수를 찾는 문제를 풀어보자 
+            
+            function solution(s){  
+                let answer = 0;                     // 카운팅하므로 answer를 0으로 초기화
+                let pos = s.indexOf('k');           // k 의 첫번째 위치를 찾는다.
+                while(pos !== -1){                  // k가 처음 나타나는 인덱스 번호가 -1일 경우는 문자열에 k가 없을때이므로, 
+                                                    // pos !== 1 이라 함은 k가 문자열에 있다는 뜻!!
+                    answer++;                       // answer를 1 증가시켜라 (카운팅)
+                    pos = s.indexOf('k', pos + 1);  // 그리고 뒤에 있는 k를 찾기위해 pos + 1 즉, 또 다른 k가 존재하는 인덱스값을 탐색한다는 뜻.
+                }
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
