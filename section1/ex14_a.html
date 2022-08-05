@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){                           // 배열 str 요소 하나하나에 접근!
+                let answer = " ";                           // 문자열을 리턴하므로 문자열로 초기화
+                let max = Number.MIN_SAFE_INTEGER;          // 문자열의 최대길이를 구하는 것이기 때문에 가장 작은값으로 변수 max를 초기화
+                for(let x of s){                            // 반복문을 돌리면서 배열 str 요소 하나하나에 접근 
+                    if(x.length > max){                     // x의 길이를 max 와 비교 ( 처음 요소가 무조건 최대값으로 들어간다. ), x의 길이가 max 보다 클경우
+                        max = x.length;                     // max 에 x의 길이를 넣고 
+                        answer = x;                         // answer에 x를 넣어라!
+                    }
+                }
+                
+                return answer;
+            }
+            let str=["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
