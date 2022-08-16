@@ -8,12 +8,51 @@
 </head>
 <body>
     <script>
+            function solution(arr){
+                let answer = Number.MIN_SAFE_INTEGER;
+                let num = arr.length;
+                let sumH = 0;
+                let sumY = 0;
+                let sumD1 = 0;
+                let sumD2 = 0;
+                for(let i = 0; i < num; i++){
+                    sumH = sumY = 0;
+                    for(let j = 0; j < num; j++){
+                        sumH += arr[i][j];
+                        sumY += arr[j][i];
+                        
+                    }
+                    console.log([i] + "행의 총합" + sumH);
+                    console.log([i] + "열의 총합" + sumY);
+                    answer = Math.max(answer, sumH, sumY);
+                        
+                }
+                console.log("행과 열의 합 중에서 가장 큰 값" + answer);
+
+                for(let i = 0; i < num; i++){
+                    sumD1 = sumD2 = 0;
+                        sumD1 += arr[i][i];
+                        sumD2 += arr[i][num-i-1];
+                        
+                    console.log([i] + "대각선의 총합" + sumD1);
+                    console.log([i] + "대각선/의 총합" + sumD2);
+                    answer = Math.max(answer, sumD1, sumD2);
+                        
+                }
+                console.log("대각선의 합 중에서 가장 큰 값" + answer);
+
+                return answer;
+
+            }
+            
+
             let arr=[[10, 13, 10, 12, 15], 
                      [12, 39, 30, 23, 11],
                      [11, 25, 50, 53, 15],
                      [19, 27, 29, 37, 27],
                      [19, 13, 30, 13, 19]];
-            console.log(arr);
+            console.log(solution(arr));
+            /*console.log(arr);
             console.log(arr[2][2]);
             console.log(arr[0]);
             console.log("========행");
@@ -40,7 +79,7 @@
             console.log(arr[2][2]);
             console.log(arr[3][1]);
             console.log(arr[4][0]);
-
+            */
     </script>
 </body>
 </html>
