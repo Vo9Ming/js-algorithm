@@ -5,15 +5,15 @@
     </head>
     <body>
         <script>
-            function solution(arr){         
-                let answer = 0;
-                let cnt = 0;
-                for(let x of arr){
-                    if( x === 1 ){
-                        cnt++;
-                        answer += cnt;
-                    }
-                    else cnt = 0;
+            function solution(arr){             // arr을 받아서 
+                let answer = 0;                 // 총 점수를 리턴하기 때문에 0으로 초기화
+                let cnt = 0;                    // 연속적으로 점수를 받을 경우를 위해 변수 선언 
+                for(let x of arr){              // arr배열 하나하나에 접근 
+                    if( x === 1 ){              // x가 1일 경우
+                        cnt++;                  // cnt를 하나 증가
+                        answer += cnt;          // 그 값을 answer에 누적 
+                    }   
+                    else cnt = 0;               // 그 외의 경우에는 cnt를 0으로 초기화
                 }
                    
                 return answer;
