@@ -5,19 +5,19 @@
     </head>
     <body>
         <script>
-            function solution(a, b){         
-                let answer = "";
-                for(let i = 0; i < a.length; i++){
-                    if(a[i] === b[i]) {
-                        answer += "D ";
-                    }else if(a[i] === 1 && b[i] === 3){
-                        answer += "A ";
-                    }else if(a[i] === 2 && b[i] === 1){
-                        answer += "A ";
-                    }else if(a[i] === 3 && b[i] === 2){
-                        answer += "A ";
-                    }else{ 
-                        answer += "B ";
+            function solution(a, b){                    // 매개변수를 받는다.
+                let answer = "";                        // 문자열을 리턴하기 때문에 문자열로 초기화
+                for(let i = 0; i < a.length; i++){      // 반복문을 a 배열의 길이만큼 돌린다. 
+                    if(a[i] === b[i]) {                 // a[i] 와 b[i]의 값이 같으면 비긴 
+                        answer += "D ";                 // D 를 출력 
+                    }else if(a[i] === 1 && b[i] === 3){ // a[i] 가 1이고(가위), b[i] 가 3이면(보)
+                        answer += "A ";                 // a가 이겼으므로 A 출력
+                    }else if(a[i] === 2 && b[i] === 1){ // a[i]가 2이고(바위), b[i]가 1이면(가위)
+                        answer += "A ";                 // a가 이겼으므로 A 출력
+                    }else if(a[i] === 3 && b[i] === 2){ // a[i]가 3이고(보), b[i]가 2이면(바위)
+                        answer += "A ";                 // a가 이겼으므로 A 출력
+                    }else{                              // 세 조건을 제외한 나머지는 B가 이긴 경우이기 때문에
+                        answer += "B ";                 // B 출력
                     }
                 
                 return answer;
