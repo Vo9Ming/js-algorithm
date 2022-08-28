@@ -6,25 +6,31 @@
   <body>
     <script>
       function solution(arr) {
-        let answer = Number.MIN_SAFE_INTEGER;
-        let n = arr.length;
-        let sum1 = 0;
-        let sum2 = 0;
+        let answer = Number.MIN_SAFE_INTEGER; // answer에 최대로 작은 정수로 초기화
+        let n = arr.length; // 변수 n에 arr배열의 길이만큼 초기화
+        let sum1 = 0; // sum1은 숫자를 받기때문에 0으로 초기화
+        let sum2 = 0; // sum2은 숫자를 받기때문에 0으로 초기화
         for (let i = 0; i < n; i++) {
-          sum1 = sum2 = 0;
+          // -----------첫번째 반복문 시작-----------
+          // 반복문을 돌린다. arr[i][j] 이런식으로 접근한다. 왜냐하면, 하나의 배열이 아니기 때문이다.
+          sum1 = sum2 = 0; // 한번 돌고난 후 0 으로 다 리셋!
           for (let j = 0; j < n; j++) {
-            sum1 += arr[i][j];
-            sum2 += arr[j][i];
-          }
-          answer = Math.max(answer, sum1, sum2);
-        }
-        sum1 = sum2 = 0;
+            // -----------두번째 반복문 시작-----------
+            // arr[i][j]중에서 j를 돌리기위해 반복문을 한번 더 돌린다.
+            sum1 += arr[i][j]; // 각 행의 합을 누적
+            sum2 += arr[j][i]; // 각 열의 합을 누적
+          } // -----------두번째 반복문 종료-----------
+          answer = Math.max(answer, sum1, sum2); // answer에 최소 정수로 초기화된 answer, 행의 합인 sum1, 열의 합인 sum2 중 최대값을 answer에 담는다.
+        } // -----------첫번째 반복문 종료-----------
+        sum1 = sum2 = 0; // sum1, sum2를 0으로 초기화
         for (let i = 0; i < n; i++) {
-          sum1 += arr[i][i];
-          sum2 += arr[i][n - i - 1];
-        }
-        answer = Math.max(answer, sum1, sum2);
-        return answer;
+          // -----------반복문 시작-----------
+          // 대각선의 합을 구하는 반복문을 돌린다
+          sum1 += arr[i][i]; // / 대각선의 합을 sum1에 누적
+          sum2 += arr[i][n - i - 1]; // \ 대각선의 합을 sum2에 누적
+        } // -----------반복문 종료-----------
+        answer = Math.max(answer, sum1, sum2); // answer에 기존에 담겨있던 최대값 answer, / 대각선의 합인 sum1, \ 대각선의 합인 sum2 중 최대값을 answer에 담는다.
+        return answer; // answer의 값을 리턴한다.
       }
 
       let arr = [
