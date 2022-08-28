@@ -1,26 +1,29 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(arr){  
-                let n = arr.length;
-                let answer = Array.from({length : n}, ( ) => 1);
-                for(let i = 0; i < n; i++){
-                    for(let j = 0; j < n; j++){
-                        if( arr[j] > arr[i] ){
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let n = arr.length; // 변수 n을 arr의 길이로 초기화
+        let answer = Array.from({ length: n }, () => 1); // answer에 각각의 등수를 넣기에 배열로 arr의 길이만큼 각각 1을 넣어준다.
+        for (let i = 0; i < n; i++) {
+          // 반복문 두개인 이유 =>
+          for (let j = 0; j < n; j++) {
+            // arr[0]을 기준으로 arr[1], arr[2], arr[3], arr[4]를 비교하며
+            if (arr[j] > arr[i]) {
+              // 비교 대상보다 작을 경우
 
-                            answer[i]++;
-                        }
-                    }
-                }             
-                return answer;
+              answer[i]++; // answer 배열에 담긴 원소의 값을 1씩 늘린다.
             }
+          }
+        }
+        return answer;
+      }
 
-            let arr=[87, 89, 92, 100, 76];
-            console.log(solution(arr));
-        </script>
-    </body>
+      let arr = [87, 89, 92, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
 </html>
