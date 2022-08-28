@@ -1,24 +1,26 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(arr){         
-                let answer = 1                          // 맨 앞에 있는 학생은 무조건 보이기 때문에 카운팅, 그렇기 때문에 1로 초기화
-                let max = arr[0];                       // 그리고, 최댓값을 arr의 첫번째 원소를 넣는다.
-                for(let i = 1; i < arr.length; i++){    // 첫번째 원소는 이미 판단되었기 때문에 반복문은 두번째 원소부터 돌린다.
-                    if(arr[i] > max){                   // max의 값보다 arr[i]가 클 경우   
-                        answer++;                       // answer의 값을 하나 증가시킨다.
-                        max = arr[i];                   // max 값을 arr[i]의 값으로 넣는다 
-                    }
-                }
-                return answer;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = 1; // 맨 앞에 있는 학생은 무조건 보이기 때문에 카운팅, 그렇기 때문에 1로 초기화
+        let max = arr[0]; // 그리고, 최댓값을 arr의 첫번째 원소를 넣는다.
+        for (let i = 1; i < arr.length; i++) {
+          // 첫번째 원소는 이미 판단되었기 때문에 반복문은 두번째 원소부터 돌린다.
+          if (arr[i] > max) {
+            // max의 값보다 arr[i]가 클 경우
+            answer++; // answer의 값을 하나 증가시킨다.
+            max = arr[i]; // max 값을 arr[i]의 값으로 넣는다
+          }
+        }
+        return answer;
+      }
 
-            let arr=[130, 135, 148, 140, 145, 150, 150, 153];
-            console.log(solution(arr));
-        </script>
-    </body>
+      let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+      console.log(solution(arr));
+    </script>
+  </body>
 </html>
